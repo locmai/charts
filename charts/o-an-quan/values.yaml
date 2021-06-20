@@ -14,7 +14,7 @@ backend:
     # Overrides the image tag whose default is the chart appVersion.
     tag: "0.0.1"
 
-  extraEnv: {}
+  extraEnv: ""
 
   imagePullSecrets: []
 
@@ -52,7 +52,7 @@ frontend:
     # Overrides the image tag whose default is the chart appVersion.
     tag: "0.0.1"
 
-  extraEnv: {}
+  extraEnv: ""
 
   imagePullSecrets: []
 
