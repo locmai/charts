@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "o-an-quan.fullname" . }}
+  name: {{ include "o-an-quan.fullname" . }}-fe
   labels:
     {{- include "o-an-quan.labels" . | nindent 4 }}
     component: frontend
