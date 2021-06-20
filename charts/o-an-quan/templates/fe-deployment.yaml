@@ -36,8 +36,8 @@ spec:
           image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           env:
-            - name: OVERSION
-              value: {{ .Values.frontend.image.tag | default .Chart.AppVersion }}   
+          - name: OVERSION
+            value: {{ .Values.frontend.image.tag | default .Chart.AppVersion }}   
           ports:
             - name: http
               containerPort: 3000
