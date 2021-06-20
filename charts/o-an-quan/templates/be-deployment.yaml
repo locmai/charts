@@ -39,9 +39,9 @@ spec:
             - name: OVERSION
               value: {{ .Values.backend.image.tag | default .Chart.AppVersion }}   
             - name: REACT_APP_BASE_URL
-              value: {{ .Values.backend.baseurl }}
+              value: "{{ .Values.backend.baseurl }}"
             - name: REACT_APP_SOCKET_URL
-              value: {{ .Values.backend.socketurl }}
+              value: "{{ .Values.backend.socketurl }}"
             - name: REACT_APP_BASE_URL
               value: {{ .Values.backend.socketport }}
           ports:
