@@ -16,6 +16,10 @@ backend:
 
   extraEnv: ""
 
+  baseurl: "localhost"
+  socketurl: "localhost"
+  socketport: 3000
+
   imagePullSecrets: []
 
   podAnnotations: {}
