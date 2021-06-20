@@ -14,6 +14,8 @@ backend:
     # Overrides the image tag whose default is the chart appVersion.
     tag: "0.0.1"
 
+  extraEnv: {}
+
   imagePullSecrets: []
 
   podAnnotations: {}
@@ -26,13 +28,7 @@ backend:
     type: ClusterIP
     port: 3003
 
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+  resources: {}
 
   autoscaling:
     enabled: false
@@ -56,6 +52,8 @@ frontend:
     # Overrides the image tag whose default is the chart appVersion.
     tag: "0.0.1"
 
+  extraEnv: {}
+
   imagePullSecrets: []
 
   podAnnotations: {}
@@ -76,13 +74,7 @@ frontend:
         paths: []
     tls: []
 
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+  resources: {}
 
   autoscaling:
     enabled: false
