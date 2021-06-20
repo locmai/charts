@@ -14,8 +14,6 @@ backend:
     # Overrides the image tag whose default is the chart appVersion.
     tag: "0.0.1"
 
-  extraEnv: ""
-
   baseurl: "localhost"
   socketurl: "localhost"
   socketport: 3000
@@ -55,8 +53,6 @@ frontend:
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: "0.0.1"
-
-  extraEnv: ""
 
   imagePullSecrets: []
 
