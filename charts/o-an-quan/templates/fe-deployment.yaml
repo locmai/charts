@@ -36,14 +36,12 @@ spec:
           image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           env:
-          - name: OVERSION
-            value: {{ .Values.backend.image.tag | default .Chart.AppVersion }}   
           - name: REACT_APP_BASE_URL
-            value: "{{ .Values.backend.baseurl }}"
+            value: "{{ .Values.frontend.baseurl }}"
           - name: REACT_APP_SOCKET_URL
-            value: "{{ .Values.backend.socketurl }}"
+            value: "{{ .Values.frontend.socketurl }}"
           - name: REACT_APP_BASE_URL
-            value: {{ .Values.backend.socketport }}
+            value: "{{ .Values.frontend.socketport }}"
           ports:
             - name: http
               containerPort: 3000

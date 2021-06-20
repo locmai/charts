@@ -16,7 +16,7 @@ backend:
 
   baseurl: "localhost"
   socketurl: "localhost"
-  socketport: 3000
+  socketport: 3003
 
   imagePullSecrets: []
 
