@@ -3,6 +3,16 @@ entries:
   o-an-quan:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-06-20T10:39:34.447846477Z"
+    description: A Helm chart for deploying sieuvb/o-an-quan project
+    digest: 0f24d54f38535e5aef301e9f8ba3aa0dee6f57d6bd245fa657ddb8896ec423e4
+    name: o-an-quan
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/o-an-quan-0.0.8/o-an-quan-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-06-20T10:19:58.45499367Z"
     description: A Helm chart for deploying sieuvb/o-an-quan project
     digest: 7239f7225f5d8888577ef8fd14edb610d624fe14b9ae0cd8ec8490c36ff3ca79
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/o-an-quan-0.0.7/o-an-quan-0.0.7.tgz
     version: 0.0.7
-generated: "2021-06-20T10:19:58.45499897Z"
+generated: "2021-06-20T10:39:34.447860377Z"
