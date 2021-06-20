@@ -40,7 +40,7 @@ spec:
             value: "{{ .Values.backend.baseurl }}"
           - name: REACT_APP_SOCKET_URL
             value: "{{ .Values.backend.socketurl }}"
-          - name: REACT_APP_BASE_URL
+          - name: REACT_APP_SOCKET_PORT
             value: "{{ .Values.backend.socketport }}"
           ports:
             - name: http
