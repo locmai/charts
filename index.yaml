@@ -3,6 +3,26 @@ entries:
   filebrowser:
   - apiVersion: v2
     appVersion: v2.15.0
+    created: "2021-07-11T17:29:10.493967181Z"
+    description: A Helm chart for File Browser
+    digest: 9a3a3b41f7fbfa052401bdb1d5011f1f9eea85fdefb42f085a8db85d395fcc68
+    icon: https://gblobscdn.gitbook.com/spaces%2F-M8KDxOujDoPpJyJJ5_i%2Favatar-1590579241040.png
+    keywords:
+    - filebrowser
+    - filesharing
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: filebrowser
+    sources:
+    - https://filebrowser.org
+    - https://github.com/locmai/charts
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/filebrowser-0.0.2/filebrowser-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: v2.15.0
     created: "2021-07-11T16:17:24.104981603Z"
     description: A Helm chart for File Browser
     digest: 1be70bf848178f41a8636df022638871bda2c9747cb33ac6c3e9ea2c76a91b34
@@ -152,4 +172,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/o-an-quan-0.0.7/o-an-quan-0.0.7.tgz
     version: 0.0.7
-generated: "2021-07-11T16:17:24.105037504Z"
+generated: "2021-07-11T17:29:10.494042882Z"
