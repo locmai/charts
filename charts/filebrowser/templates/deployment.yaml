@@ -47,9 +47,6 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-            - name: data
-              mountPath: /
       volumes:
   {{- if and .Values.persistence.enabled .Values.persistence.existingClaim }}
         - name: data
