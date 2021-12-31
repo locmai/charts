@@ -323,6 +323,72 @@ entries:
   saleor-platform:
   - apiVersion: v2
     appVersion: 2.11.1
+    created: "2021-12-31T11:52:03.184227683Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - database
+      version: 9.8.11
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - cache
+      version: 12.0.0
+    - condition: nfs.enabled
+      name: nfs-server-provisioner
+      repository: https://kvaps.github.io/charts
+      tags:
+      - nfs
+      version: 1.1.1
+    - condition: saleor-core.enabled
+      name: saleor-core
+      repository: https://locmai.github.io/charts/
+      tags:
+      - workers
+      - api
+      - web
+      version: 0.1.5
+    - condition: saleor-storefront.enabled
+      name: saleor-storefront
+      repository: https://locmai.github.io/charts/
+      tags:
+      - ui
+      - storefront
+      version: 0.1.3
+    - condition: saleor-dashboard.enabled
+      name: saleor-dashboard
+      repository: https://locmai.github.io/charts/
+      tags:
+      - ui
+      - dashboard
+      version: 0.1.3
+    description: A Helm chart for deploying the entire umbrella of saleor charts
+    digest: 05a6aa18c9e61447265e8d38b7824185332b5aed9c8a79afa344c418721bc72d
+    home: https://github.com/eirenauts/saleor-k8s
+    keywords:
+    - saleor
+    - ecommerce
+    - graphql
+    - django
+    - single page app
+    kubeVersion: '>=1.9.0'
+    maintainers:
+    - email: stephen@stephenmoloney.com
+      name: Stephen Moloney
+      url: stephenmoloney.com
+    name: saleor-platform
+    sources:
+    - https://github.com/mirumee/saleor
+    - https://github.com/eirenauts/saleor-k8s
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/saleor-platform-0.1.5/saleor-platform-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 2.11.1
     created: "2021-12-31T09:59:12.174007605Z"
     dependencies:
     - condition: postgresql.enabled
@@ -594,4 +660,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-31T10:08:43.077878378Z"
+generated: "2021-12-31T11:52:03.184329191Z"
