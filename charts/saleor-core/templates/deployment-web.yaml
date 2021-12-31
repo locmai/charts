@@ -41,11 +41,11 @@ spec:
         # ConfigMap for the django based application settings
         - name: custom-settings
           configMap:
-          {{- if (not .Values.alternativeAppSettingsConfigMap) }}
-          name: {{ include "saleor-core.fullname" . }}-custom-settings
-          {{- else }}
-          name: {{ .Values.alternativeAppSettingsConfigMap }}
-          {{- end }}
+            {{- if (not .Values.alternativeAppSettingsConfigMap) }}
+            name: {{ include "saleor-core.fullname" . }}-custom-settings
+            {{- else }}
+            name: {{ .Values.alternativeAppSettingsConfigMap }}
+            {{- end }}
         # Volume for the images and unstructured data
         - name: saleor-data-media
           {{- if and .Values.persistence.enabled .Values.persistence.existingPvc }}

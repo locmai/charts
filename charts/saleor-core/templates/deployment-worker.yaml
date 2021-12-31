@@ -40,11 +40,11 @@ spec:
         # ConfigMap for the django based application settings
         - name: custom-settings
           configMap:
-          {{- if (not .Values.alternativeAppSettingsConfigMap) }}
-          name: {{ include "saleor-core.fullname" . }}-custom-settings
-          {{- else }}
-          name: {{ .Values.alternativeAppSettingsConfigMap }}
-          {{- end }}
+            {{- if (not .Values.alternativeAppSettingsConfigMap) }}
+            name: {{ include "saleor-core.fullname" . }}-custom-settings
+            {{- else }}
+            name: {{ .Values.alternativeAppSettingsConfigMap }}
+            {{- end }}
         # ConfigMap for the nginx configuration and the static assets script
         - name: web-conf
           configMap:
