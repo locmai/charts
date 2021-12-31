@@ -175,6 +175,30 @@ entries:
   saleor-core:
   - apiVersion: v2
     appVersion: 2.11.4
+    created: "2021-12-31T09:33:04.353355759Z"
+    description: A Helm chart for deploying the saleor core application in Kubernetes
+    digest: be9682a0a1aba6f96bc28a04e90b5ee6359dbfba457c9630eeda3bc16847a4d2
+    home: https://github.com/eirenauts/saleor-k8s
+    keywords:
+    - saleor
+    - ecommerce
+    - graphql
+    - django
+    kubeVersion: '>=1.9.0'
+    maintainers:
+    - email: stephen@stephenmoloney.com
+      name: Stephen Moloney
+      url: stephenmoloney.com
+    name: saleor-core
+    sources:
+    - https://github.com/mirumee/saleor
+    - https://github.com/eirenauts/saleor-k8s
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/saleor-core-0.1.3/saleor-core-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 2.11.4
     created: "2021-12-31T09:14:21.450788179Z"
     description: A Helm chart for deploying the saleor core application in Kubernetes
     digest: a269957a14c9346c7c7afcc8349375cc5e0df1f52f4113dc98a9a8f6495d2786
@@ -198,6 +222,31 @@ entries:
     - https://github.com/locmai/charts/releases/download/saleor-core-0.1.1/saleor-core-0.1.1.tgz
     version: 0.1.1
   saleor-dashboard:
+  - apiVersion: v2
+    appVersion: 2.11.1
+    created: "2021-12-31T09:33:04.494588294Z"
+    description: A Helm chart for deploying the saleor dashboard application in Kubernetes
+    digest: ebc040bf44322df5f119c76657defafb4b6d565956a0e69000ba0d9f0e906ead
+    home: https://github.com/eirenauts/saleor-k8s
+    keywords:
+    - saleor
+    - ecommerce
+    - graphql
+    - django
+    - single page app
+    kubeVersion: '>=1.9.0'
+    maintainers:
+    - email: stephen@stephenmoloney.com
+      name: Stephen Moloney
+      url: stephenmoloney.com
+    name: saleor-dashboard
+    sources:
+    - https://github.com/mirumee/saleor
+    - https://github.com/eirenauts/saleor-k8s
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/saleor-dashboard-0.1.3/saleor-dashboard-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v2
     appVersion: 2.11.1
     created: "2021-12-31T09:14:21.523604444Z"
@@ -293,6 +342,31 @@ entries:
   saleor-storefront:
   - apiVersion: v2
     appVersion: 2.11.1
+    created: "2021-12-31T09:33:04.640933698Z"
+    description: A Helm chart for deploying the saleor storefront application in Kubernetes
+    digest: f3a6d999aeac5587a85f8f7090098a3e34ace47e3b0bd7e8d30e12a4667814a0
+    home: https://github.com/eirenauts/saleor-k8s
+    keywords:
+    - saleor
+    - ecommerce
+    - graphql
+    - django
+    - single page app
+    kubeVersion: '>=1.9.0'
+    maintainers:
+    - email: stephen@stephenmoloney.com
+      name: Stephen Moloney
+      url: stephenmoloney.com
+    name: saleor-storefront
+    sources:
+    - https://github.com/mirumee/saleor
+    - https://github.com/eirenauts/saleor-k8s
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/saleor-storefront-0.1.3/saleor-storefront-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 2.11.1
     created: "2021-12-31T09:14:21.705049101Z"
     description: A Helm chart for deploying the saleor storefront application in Kubernetes
     digest: 10962e8e5922462eda77ce815c26bea568ff4105ddd6370de47b86d230cf760b
@@ -340,4 +414,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-31T09:14:21.789026999Z"
+generated: "2021-12-31T09:33:04.641009898Z"
