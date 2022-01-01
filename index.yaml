@@ -41,6 +41,53 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/filebrowser-0.0.1/filebrowser-0.0.1.tgz
     version: 0.0.1
+  jaeger:
+  - apiVersion: v2
+    appVersion: 1.28.0
+    created: "2022-01-01T18:53:54.603421314Z"
+    dependencies:
+    - condition: provisionDataStore.cassandra
+      name: cassandra
+      repository: https://charts.helm.sh/incubator
+      version: 0.15.3
+    - condition: provisionDataStore.elasticsearch
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ^7.11.1
+    - condition: provisionDataStore.kafka
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.16.0
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.8.0
+    description: A Jaeger Helm chart for Kubernetes
+    digest: bdf3bf2750329d3270949d7588b27e9bae37d334c2559d0406c040ebdc58ca83
+    home: https://jaegertracing.io
+    icon: https://camo.githubusercontent.com/afa87494e0753b4b1f5719a2f35aa5263859dffb/687474703a2f2f6a61656765722e72656164746865646f63732e696f2f656e2f6c61746573742f696d616765732f6a61656765722d766563746f722e737667
+    keywords:
+    - jaeger
+    - opentracing
+    - tracing
+    - instrumentation
+    maintainers:
+    - email: david.vonthenen@dell.com
+      name: dvonthenen
+    - email: ankit.mehta@appian.com
+      name: mehta-ankit
+    - email: michael.lorant@fairfaxmedia.com.au
+      name: mikelorant
+    - email: naseem@transit.app
+      name: naseemkullah
+    - email: pavel.nikolov@fairfaxmedia.com.au
+      name: pavelnikolov
+    name: jaeger
+    sources:
+    - https://hub.docker.com/u/jaegertracing/
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/jaeger-0.51.6/jaeger-0.51.6.tgz
+    version: 0.51.6
   o-an-quan:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -660,4 +707,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-31T11:52:03.184329191Z"
+generated: "2022-01-01T18:53:54.603673615Z"
