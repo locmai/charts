@@ -39,11 +39,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /_matrix/client/versions
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /_matrix/client/versions
               port: http
           volumeMounts:
           - mountPath: /srv/conduit/conduit.toml
