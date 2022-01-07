@@ -3,6 +3,16 @@ entries:
   conduit:
   - apiVersion: v2
     appVersion: next-commit-9b57c89d
+    created: "2022-01-07T14:00:41.819748347Z"
+    description: A Helm chart for conduit.rs
+    digest: 407137253129c8df557179bda40ce2cd18910fdcdeb4ece96e4c207f2bee1461
+    name: conduit
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/conduit-0.1.2/conduit-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: next-commit-9b57c89d
     created: "2022-01-07T13:29:40.057053777Z"
     description: A Helm chart for conduit.rs
     digest: 6f2b28de9aec8a113cb03fff14df33e0976bc936619a67d9ac9d17f50aa10f0b
@@ -728,4 +738,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-07T13:29:40.057133979Z"
+generated: "2022-01-07T14:00:41.819838347Z"
