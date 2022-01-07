@@ -81,6 +81,13 @@ tolerations: []
 
 affinity: {}
 
+persistence:
+  enabled: false
+  labels:
+    # Add default labels for the volumeClaimTemplate of the StatefulSet
+    enabled: false
+  annotations: {}
+
 conduit_toml:
   server_name: "your.server.name"
   database_path: "/var/lib/conduit/"

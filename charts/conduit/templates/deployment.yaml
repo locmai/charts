@@ -11,6 +11,26 @@ spec:
   selector:
     matchLabels:
       {{- include "conduit.selectorLabels" . | nindent 6 }}
+{{- if .Values.persistence.enabled }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ include "conduit.fullname" . }}
+    {{- if .Values.persistence.labels.enabled }}
+      labels:
+        release: {{ .Release.Name | quote }}
+        chart: "{{ .Chart.Name }}"
+        app: "{{ include "conduit.fullname" . }}"
+        {{- range $key, $value := .Values.labels }}
+        {{ $key }}: {{ $value | quote }}
+        {{- end }}
+    {{- end }}
+    {{- with .Values.persistence.annotations  }}
+      annotations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    spec:
+{{ toYaml .Values.volumeClaimTemplate | indent 6 }}
+{{- end }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -49,6 +69,8 @@ spec:
           - mountPath: /srv/conduit/conduit.toml
             name: conduit-data
             subPath: conduit.toml
+          - mountPath: {{ quote .Values.conduit_toml.database_path }}
+            name: conduit-db 
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
@@ -58,6 +80,10 @@ spec:
             items:
             - key: conduit.toml
               path: conduit.toml
+        {{- if eq .Values.persistence.enabled false }}
+        - name: conduit-db
+          emptyDir: {}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
