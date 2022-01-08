@@ -57,14 +57,6 @@ spec:
             - name: http
               containerPort: {{ .Values.conduit_toml.port }}
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /_matrix/client/versions
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /_matrix/client/versions
-              port: http
           volumeMounts:
           - mountPath: /srv/conduit/conduit.toml
             name: conduit-data

@@ -43,7 +43,7 @@ data:
     trusted_servers = {{ .Values.conduit_toml.trusted_servers }}
 
     #max_concurrent_requests = 100 # How many requests Conduit sends to other servers at the same time
-    #log = "info,state_res=warn,rocket=off,_=off,sled=off"
+    log = "{{ .Values.conduit_toml.log_level }},state_res=warn,rocket=off,_=off,sled=off"
     #workers = 4 # default: cpu core count * 2
 
     address = "127.0.0.1" # This makes sure Conduit can only be reached using the reverse proxy
