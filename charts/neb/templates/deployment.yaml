@@ -37,25 +37,19 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           volumeMounts:
+          - mountPath: /db
+            name: neb-db
           - mountPath: /data/config.yaml
             name: {{ include "neb.fullname" . }}
             subPath: config.yaml
           env:
           - name: BIND_ADDRESS
-            value: {{ quote .Values.service.port }}
+            value: :{{ .Values.service.port }}
           - name: DATABASE_TYPE
             value: "sqlite3"
           - name: DATABASE_URL
-            value: "/data/go-neb.db?_busy_timeout=5000"
+            value: "/db/go-neb.db?_busy_timeout=5000"
           - name: BASE_URL
             value:  {{ quote .Values.config.base_url }}
           - name: CONFIG_FILE
@@ -69,6 +63,8 @@ spec:
             items:
             - key: config.yaml
               path: config.yaml
+        - name: neb-db
+          emptyDir: {}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "neb.labels" . | nindent 4 }}
 data:
-  config.yaml: |      
+  config.yaml: |
     # Full sample: https://github.com/matrix-org/go-neb/blob/master/config.sample.yaml
     # Go-NEB Configuration File
     clients:
@@ -13,10 +13,9 @@ data:
         AccessToken: ""
         DeviceID: "DEVICE1"
         HomeserverURL: "https://dendrite.maibaloc.com"
-        Sync: true
+        Sync: false
         AutoJoinRooms: true
-        DisplayName: "Alertmanager Bot"
-        AcceptVerificationFromUsers: [":dendrite.maibaloc.com"]
+        DisplayName: "AlertmanagerBot"
 
     services:
       - ID: "alertmanager_service"
@@ -27,10 +26,10 @@ data:
           # `/services/hooks/<base64 encoded service ID>`
           # Where in this case "service ID" is "alertmanager_service"
           # Make sure your BASE_URL can be accessed by the Alertmanager instance!
-          webhook_url: "http://localhost/services/hooks/YWxlcnRtYW5hZ2VyX3NlcnZpY2U"
+          webhook_url: "http://neb.apps.svc.cluster.local/services/hooks/YWxlcnRtYW5hZ2VyX3NlcnZpY2U"
           # Each room will get the notification with the alert rendered with the given template
           rooms:
-            "!alerts:dendrite.maibaloc.com":
-              text_template: "{{range .Alerts -}} [{{ .Status }}] {{index .Labels "alertname" }}: {{index .Annotations "description"}} {{ end -}}"
-              html_template: "{{range .Alerts -}}  {{ $severity := index .Labels "severity" }}    {{ if eq .Status "firing" }}      {{ if eq $severity "critical"}}        <font color='red'><b>[FIRING - CRITICAL]</b></font>      {{ else if eq $severity "warning"}}        <font color='orange'><b>[FIRING - WARNING]</b></font>      {{ else }}        <b>[FIRING - {{ $severity }}]</b>      {{ end }}    {{ else }}      <font color='green'><b>[RESOLVED]</b></font>    {{ end }}  {{ index .Labels "alertname"}} : {{ index .Annotations "description"}}   <a href="{{ .GeneratorURL }}">source</a><br/>{{end -}}"
-              msg_type: "m.text"  # Must be either `m.text` or `m.notice`
+            "{{ .Values.config.room_id }}":
+              text_template: "{{ printf "{{range .Alerts -}} [{{ .Status }}] {{index .Labels \\\"alertname\\\" }}: {{index .Annotations \\\"description\\\"}} {{ end -}}" }}"
+              html_template: "{{ printf "{{range .Alerts -}}  {{ $severity := index .Labels \\\"severity\\\" }}    {{ if eq .Status \\\"firing\\\" }}      {{ if eq $severity \\\"critical\\\"}}        <font color='red'><b>[FIRING - CRITICAL]</b></font>      {{ else if eq $severity \\\"warning\\\"}}        <font color='orange'><b>[FIRING - WARNING]</b></font>      {{ else }}        <b>[FIRING - {{ $severity }}]</b>      {{ end }}    {{ else }}      <font color='green'><b>[RESOLVED]</b></font>    {{ end }}  {{ index .Labels \\\"alertname\\\"}} : {{ index .Annotations \\\"description\\\"}}   <a href=\\\"grafana.maibaloc.com\\\">source</a><br/>{{end -}}" }}"         
+              msg_type: "m.text"
