@@ -33,6 +33,10 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+          - mountPath: /src/webapp/config.json
+            name: element-config
+            subPath: config.json
           ports:
             - name: http
               containerPort: 80
@@ -47,6 +51,13 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: element-config
+          configMap:
+            name: {{ include "elementweb.fullname" . }}
+            items:
+            - key: config.json
+              path: config.json
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

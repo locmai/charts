@@ -80,3 +80,10 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+config:
+  default:
+    base_url: "https://matrix-client.matrix.org"
+    server_name: "matrix.org"
+    
+    theme: "light"
