@@ -2,10 +2,12 @@
 
 # Use a polylith setup, which creates a deployment for every component.
 # If false, a monolithic deployment will be created, with a single deployment.
-polylith: true
+polylith: false
+
 # Docker image to use
 image:
-  name: "matrixdotorg/dendrite-polylith:latest"
+  # name: "matrixdotorg/dendrite-polylith:latest"
+  name: "locmai/dendrite-monolith:010922"
   pullPolicy: Always
 
 configuration:
@@ -13,7 +15,7 @@ configuration:
   version: 2
 
   # servername for this dendrite deployment
-  servername: ""
+  servername: "dendrite.maibaloc.com"
 
   # The server name to delegate server-server communications to, with optional port
   # e.g. localhost:443
@@ -40,9 +42,9 @@ configuration:
 
   # database connection settings
   database:
-    host:  ""
-    user:  ""
-    password: ""
+    host:  "dendrite-postgresql.apps.svc.cluster.local:5432"
+    user:  "dendrite"
+    password: "dendrite"
     max_open_conns: 100
     max_idle_conns: 2
     conn_max_lifetime: -1
@@ -67,7 +69,7 @@ configuration:
     storage_path: "./"
     # List of NATS addresses to connect to. If empty, an in-process NATS server is used.
     addresses:
-      #- nats://nats-cluster.nats.svc.cluster.local:4222
+      - nats://dendrite-nats:4222
 
   # TURN server information that this homeserver should send to clients.
   turn:
@@ -272,10 +274,10 @@ postgresql:
     ## @param global.postgresql.replicationPassword Replication user password (overrides `replication.password`)
     ##
     postgresql:
-      postgresqlDatabase: ""
-      postgresqlUsername: ""
+      postgresqlDatabase: "dendrite"
+      postgresqlUsername: "dendrite"
       existingSecret: ""
-      postgresqlPassword: ""
+      postgresqlPassword: "dendrite"
       servicePort: ""
       replicationPassword: ""
 

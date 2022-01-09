@@ -1,19 +1,4 @@
 {{ if not .Values.persistence.media.existingClaim }}
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  annotations:
-    helm.sh/resource-policy: keep
-  name: dendrite-media
-spec:
-  capacity:
-    storage: {{ .Values.persistence.media.capacity }}
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: {{ .Values.persistence.storageClass }}
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -30,22 +15,8 @@ spec:
       storage: {{ .Values.persistence.media.capacity }}
   storageClassName: {{ .Values.persistence.storageClass }}
 {{ end }}
+---
 {{ if not .Values.persistence.logs.existingClaim }}
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  annotations:
-    helm.sh/resource-policy: keep
-  name: dendrite-logs
-spec:
-  capacity:
-    storage: {{ .Values.persistence.logs.capacity }}
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: {{ .Values.persistence.storageClass }}
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
