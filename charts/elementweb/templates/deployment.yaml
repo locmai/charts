@@ -34,7 +34,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
-          - mountPath: /src/webapp/config.json
+          - mountPath: /app/config.json
             name: element-config
             subPath: config.json
           ports:
