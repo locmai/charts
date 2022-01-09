@@ -41,6 +41,25 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/conduit-0.1.0/conduit-0.1.0.tgz
     version: 0.1.0
+  dendrite:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: "2022-01-09T12:14:51.883432707Z"
+    description: Dendrite Matrix Homeserver
+    digest: c7020b914df659688140b55a52810efddb05b73e7e00fd940f4eebf574c0ef44
+    home: https://github.com/matrix-org/dendrite
+    keywords:
+    - matrix
+    - chat
+    - homeserver
+    - dendrite
+    name: dendrite
+    sources:
+    - https://github.com/matrix-org/dendrite
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/dendrite-0.0.1/dendrite-0.0.1.tgz
+    version: 0.0.1
   filebrowser:
   - apiVersion: v2
     appVersion: v2.15.0
@@ -748,4 +767,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-08T16:23:00.183193508Z"
+generated: "2022-01-09T12:14:51.88361981Z"
