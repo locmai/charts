@@ -193,6 +193,16 @@ entries:
   neb:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-01-09T17:51:09.274427968Z"
+    description: A Helm chart for Go-NEB
+    digest: b43d2ac6fce9545aa85215ee5acc0edfc478bd6154aeb0e8c9f9a16e7b6f11f9
+    name: neb
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/neb-0.1.1/neb-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-01-09T17:41:08.374734977Z"
     description: A Helm chart for Go-NEB
     digest: 4bea3411c9ff85c6398d406f6d17ca99650001a986f7446e104f147cb8b77abd
@@ -820,4 +830,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-09T17:41:08.374853786Z"
+generated: "2022-01-09T17:51:09.274508069Z"
