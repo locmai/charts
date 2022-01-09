@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "elementweb.fullname" . }}
+  labels:
+    {{- include "elementweb.labels" . | nindent 4 }}
+data:
+  .env: |
+    APP_PORT={{ .Values.service.port }}
+    APP_ALERTMANAGER_SECRET={{ .Values.config.app_alertmanager_secret }}
+    MATRIX_HOMESERVER_URL={{ .Values.config.matrix_homeserver_url }}
+    # The rooms to send alerts to, separated by a |
+    # Each entry contains the receiver name (from alertmanager) and the
+    # internal id (not the public alias) of the Matrix channel to forward to.
+    MATRIX_ROOMS={{ .Values.config.matrix_rooms }}
+    MATRIX_TOKEN={{ .Values.config.matrix_token }}
+    MATRIX_USER={{ .Values.config.matrix_user }}
+    # Set this to 1 to make firing alerts do a `@room` mention.
+    # NOTE! Bot should also have enough power in the room for this to be useful.
+    MENTION_ROOM={{ .Values.config.mention_room }}
