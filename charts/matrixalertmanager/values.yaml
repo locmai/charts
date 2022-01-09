@@ -85,6 +85,6 @@ config:
   app_alertmanager_secret: verysecret
   matrix_homeserver_url: https://matrix-client.matrix.org
   matrix_rooms: receiver1/!abcdefgh:homeserver.tld|receiver2/!qwerty:homeserver.tld
-  matrix_user: @alertmanager:homeserver.tld
+  matrix_user: "@alertmanager:homeserver.tld"
   matrix_token: "placeholder"
   mention_room: 0
