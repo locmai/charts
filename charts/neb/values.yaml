@@ -80,3 +80,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+config:
+  base_url: "http://neb.apps.svc.cluster.local:4050"

@@ -51,13 +51,13 @@ spec:
             subPath: config.yaml
           env:
           - name: BIND_ADDRESS
-            value: {{ .Values.service.port }}
+            value: {{ quote .Values.service.port }}
           - name: DATABASE_TYPE
-            value: "sqlite3" # Only 1 option
+            value: "sqlite3"
           - name: DATABASE_URL
-            value: "go-neb.db?_busy_timeout=5000"
+            value: "/data/go-neb.db?_busy_timeout=5000"
           - name: BASE_URL
-            value: https://public.facing.endpoint
+            value:  {{ quote .Values.config.base_url }}
           - name: CONFIG_FILE
             value: "/data/config.yaml"
           resources:

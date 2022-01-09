@@ -9,19 +9,19 @@ data:
     # Full sample: https://github.com/matrix-org/go-neb/blob/master/config.sample.yaml
     # Go-NEB Configuration File
     clients:
-      - UserID: "@goneb:localhost"
-        AccessToken: "MDASDASJDIASDJASDAFGFRGER"
+      - UserID: "@alertmanager:dendrite.maibaloc.com"
+        AccessToken: ""
         DeviceID: "DEVICE1"
-        HomeserverURL: "http://localhost:8008"
+        HomeserverURL: "https://dendrite.maibaloc.com"
         Sync: true
         AutoJoinRooms: true
-        DisplayName: "Go-NEB!"
-        AcceptVerificationFromUsers: [":localhost:8008"]
+        DisplayName: "Alertmanager Bot"
+        AcceptVerificationFromUsers: [":dendrite.maibaloc.com"]
 
     services:
       - ID: "alertmanager_service"
         Type: "alertmanager"
-        UserID: "@alertmanager:localhost"
+        UserID: "@alertmanager:dendrite.maibaloc.com"
         Config:
           # This is for information purposes only. It should point to Go-NEB path as follows:
           # `/services/hooks/<base64 encoded service ID>`
@@ -30,7 +30,7 @@ data:
           webhook_url: "http://localhost/services/hooks/YWxlcnRtYW5hZ2VyX3NlcnZpY2U"
           # Each room will get the notification with the alert rendered with the given template
           rooms:
-            "!someroomid:domain.tld":
-              text_template: "{{range .Alerts -}} [{{ .Status }}] {{index .Labels \"alertname\" }}: {{index .Annotations \"description\"}} {{ end -}}"
-              html_template: "{{range .Alerts -}}  {{ $severity := index .Labels \"severity\" }}    {{ if eq .Status \"firing\" }}      {{ if eq $severity \"critical\"}}        <font color='red'><b>[FIRING - CRITICAL]</b></font>      {{ else if eq $severity \"warning\"}}        <font color='orange'><b>[FIRING - WARNING]</b></font>      {{ else }}        <b>[FIRING - {{ $severity }}]</b>      {{ end }}    {{ else }}      <font color='green'><b>[RESOLVED]</b></font>    {{ end }}  {{ index .Labels \"alertname\"}} : {{ index .Annotations \"description\"}}   <a href=\"{{ .GeneratorURL }}\">source</a><br/>{{end -}}"
+            "!alerts:dendrite.maibaloc.com":
+              text_template: "{{range .Alerts -}} [{{ .Status }}] {{index .Labels "alertname" }}: {{index .Annotations "description"}} {{ end -}}"
+              html_template: "{{range .Alerts -}}  {{ $severity := index .Labels "severity" }}    {{ if eq .Status "firing" }}      {{ if eq $severity "critical"}}        <font color='red'><b>[FIRING - CRITICAL]</b></font>      {{ else if eq $severity "warning"}}        <font color='orange'><b>[FIRING - WARNING]</b></font>      {{ else }}        <b>[FIRING - {{ $severity }}]</b>      {{ end }}    {{ else }}      <font color='green'><b>[RESOLVED]</b></font>    {{ end }}  {{ index .Labels "alertname"}} : {{ index .Annotations "description"}}   <a href="{{ .GeneratorURL }}">source</a><br/>{{end -}}"
               msg_type: "m.text"  # Must be either `m.text` or `m.notice`
