@@ -63,6 +63,16 @@ entries:
   elementweb:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-01-09T13:38:31.526750061Z"
+    description: A Helm chart for app.element.io
+    digest: 645117e22f2af16c402aa74ef1bd45c1fadaa204c49c14cb347698199ff786d4
+    name: elementweb
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/elementweb-0.0.2/elementweb-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-01-09T13:18:21.844378595Z"
     description: A Helm chart for app.element.io
     digest: 534796a128f9e61f96307f5b4d872bf9a1cd4f297410ebb27ce980ff4aa85721
@@ -778,4 +788,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-09T13:18:21.844438596Z"
+generated: "2022-01-09T13:38:31.526886662Z"
