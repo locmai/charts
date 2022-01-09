@@ -15,10 +15,10 @@ appVersion: 0.0.1
 
 dependencies:
 - name: nats
-  version: "0.10.0"
-  repository: "https://nats-io.github.io/k8s/helm/charts"
+  version: 0.10.0
+  repository: https://nats-io.github.io/k8s/helm/charts
   condition: nats.enabled
 - name: postgresql
-  version: "10.15.1"
-  repository: "https://charts.bitnami.com/bitnami"
+  version: 10.15.1
+  repository: https://charts.bitnami.com/bitnami
   condition: postgresql.enabled
