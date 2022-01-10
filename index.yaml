@@ -132,6 +132,33 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/filebrowser-0.0.1/filebrowser-0.0.1.tgz
     version: 0.0.1
+  harbor:
+  - apiVersion: v1
+    appVersion: 2.4.1
+    created: "2022-01-10T18:04:24.858198448Z"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content
+    digest: e5137c8b0a1a58e3207d979f9b978edeacf7a0dd7720209a947bdf91220161fc
+    home: https://goharbor.io
+    icon: https://raw.githubusercontent.com/goharbor/website/master/static/img/logos/harbor-icon-color.png
+    keywords:
+    - docker
+    - registry
+    - harbor
+    maintainers:
+    - email: yinw@vmware.com
+      name: Wenkai Yin
+    - email: hweiwei@vmware.com
+      name: Weiwei He
+    - email: dengq@vmware.com
+      name: Qian Deng
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor
+    - https://github.com/goharbor/harbor-helm
+    urls:
+    - https://github.com/locmai/charts/releases/download/harbor-1.8.1/harbor-1.8.1.tgz
+    version: 1.8.1
   jaeger:
   - apiVersion: v2
     appVersion: 1.28.0
@@ -840,4 +867,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-09T19:21:32.501831446Z"
+generated: "2022-01-10T18:04:24.858327549Z"
