@@ -113,6 +113,16 @@ env:
     value: ""
   - name: RESTIC_S3_SECRET_ACCESS_KEY
     value: ""
+  - name: REDIS_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: {{ include "saleor-core.fullname" . }}
+        key: REDIS_PASSWORD
+  - name: POSTGRESQL_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: {{ include "saleor-core.fullname" . }}
+        key: postgresql-password
 {{- end }}
 {{- if and .Values.jobs.init.plugins.enabled .Values.externalServices.vatLayer.enabled }}
   - name: VATLAYER_API_KEY
