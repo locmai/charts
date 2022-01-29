@@ -97,16 +97,13 @@ Generate standard environment configuration.
 envFrom:
   - configMapRef:
       name: {{ include "saleor-core.fullname" . }}
-  - secretRef:
-    {{- if not .Values.existingSecret }}
-      name: {{ include "saleor-core.fullname" . }}
-    {{- else }}
-      name: {{ .Values.existingSecret }}
-    {{- end }}
 env:
 {{- if .Values.existingSecret }}
   - name: SECRET_KEY
-    value: "$(SALEOR_SECRET_KEY)"
+    valueFrom:
+      secretKeyRef:
+        name: {{ .Values.existingSecret }}
+        key: SECRET_KEY
   - name: RESTIC_PASSWORD
     value: ""
   - name: RESTIC_S3_ACCESS_KEY_ID
@@ -116,12 +113,12 @@ env:
   - name: REDIS_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: {{ include "saleor-core.fullname" . }}
+        name: {{ .Values.existingSecret }}
         key: REDIS_PASSWORD
   - name: POSTGRESQL_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: {{ include "saleor-core.fullname" . }}
+        name: {{ .Values.existingSecret }}
         key: postgresql-password
 {{- end }}
 {{- if and .Values.jobs.init.plugins.enabled .Values.externalServices.vatLayer.enabled }}
