@@ -44,6 +44,24 @@ entries:
   dendrite:
   - apiVersion: v1
     appVersion: 0.0.1
+    created: "2022-02-01T17:50:44.957648697Z"
+    description: Dendrite Matrix Homeserver
+    digest: 515744083c00739f3deeb10bcdf89b977ba58d74bb3e981d86fff5227dfbf589
+    home: https://github.com/matrix-org/dendrite
+    keywords:
+    - matrix
+    - chat
+    - homeserver
+    - dendrite
+    name: dendrite
+    sources:
+    - https://github.com/matrix-org/dendrite
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/dendrite-0.0.3/dendrite-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    appVersion: 0.0.1
     created: "2022-01-29T08:40:58.495199308Z"
     description: Dendrite Matrix Homeserver
     digest: 83f9349b5696166b190d014634c7366a27cf7fa1c40b9e81726239b15b521ff5
@@ -957,4 +975,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-29T08:40:58.495331208Z"
+generated: "2022-02-01T17:50:44.957972901Z"
