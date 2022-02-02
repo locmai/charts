@@ -54,7 +54,7 @@ dependencies:
   ## 2. Pods for the web server (for static assets and media assets) if not using cloud storage
   ## 3. Pods for the celery workers which execute particular tasks on demand
   - name: saleor-core
-    version: "0.1.5"
+    version: "0.1.8"
     repository: "https://locmai.github.io/charts/"
     condition: saleor-core.enabled
     tags:

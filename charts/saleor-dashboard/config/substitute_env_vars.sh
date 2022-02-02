@@ -30,7 +30,7 @@ main() {
     replace_vars "STATIC_URL" "${STATIC_URL}" "/app/index.html" "/etc/nginx/app/index.html"
     replace_vars "STATIC_URL" "${STATIC_URL}" "/app/${dashboard_js_base_filepath}" "/etc/nginx/app/${dashboard_js_base_filepath}.1"
     replace_vars "API_URI" "${API_URI}" "/etc/nginx/app/${dashboard_js_base_filepath}.1" "/etc/nginx/app/${dashboard_js_base_filepath}.2"
-    replace_vars "APP_MOUNT_URI" "${APP_MOUNT_URI}" "/etc/nginx/app/${dashboard_js_base_filepath}.2" "/etc/nginx/app/${dashboard_js_base_filepath}.3"
+    replace_vars "APP_MOUN/etc/nginx/app/T_URI" "${APP_MOUNT_URI}" "/etc/nginx/app/${dashboard_js_base_filepath}.2" "/etc/nginx/app/${dashboard_js_base_filepath}.3"
 
     cp "/etc/nginx/app/${dashboard_js_base_filepath}.3" "/etc/nginx/app/${dashboard_js_base_filepath}"
 
