@@ -1,0 +1,111 @@
+global:
+  image:
+    registry: "locmai"
+    tag: "v0.3.6"
+
+  tracing:
+    disabled: "1"
+    # endpoint: "jaeger-collector:14250"
+    endpoint: "$(HOST_IP):14250"
+  statExporting:
+    disabled: "1"
+  
+  profiling:
+    disabled: "1"
+
+  extraEnv:
+  - name: HOST_IP
+    valueFrom:
+      fieldRef:
+        apiVersion: v1
+        fieldPath: status.hostIP
+
+adservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+cartservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+checkoutservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+currencyservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+emailservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+frontend:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+loadgenerator:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+paymentservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+productcatalogservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+recommendationservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+shippingservice:
+  enabled: true
+  image:
+    registry: ""
+  statExporting:
+    disabled: ""
+  tracing:
+    disabled: ""
+
