@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "docker-mailserver.fullname" . }}
+  labels:
+    {{- include "docker-mailserver.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "docker-mailserver.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "docker-mailserver.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "docker-mailserver.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+      - name: config
+        emptyDir: {}
+      - name: inituser
+        secret:
+          secretName: {{ .Values.initUser.existingSecret }}
+          items:
+          - key: "INIT_USER"
+            path: postfix-accounts.cf
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: transfer
+              containerPort: 25
+              protocol: TCP
+            - name: esmtp-implicit
+              containerPort: 465
+              protocol: TCP
+            - name: esmtp-explicit
+              containerPort: 587
+            - name: imap-implicit
+              containerPort: 993
+              protocol: TCP
+            - name: imap-explicit
+              containerPort: 143
+              protocol: TCP
+          envFrom:
+          - configMapRef:
+              name: {{ include "docker-mailserver.fullname" . }}
+          volumeMounts:
+          - name: inituser
+            subPath: postfix-accounts.cf
+            mountPath: /tmp/docker-mailserver/postfix-accounts.cf
+          livenessProbe:
+            exec:
+               command:
+                 - /bin/bash
+                 - -c
+                 - supervisorctl status | grep -E "mailserver" | grep RUNNING
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+               command:
+                 - /bin/bash
+                 - -c
+                 - supervisorctl status | grep -E "mailserver|postfix" | grep RUNNING
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 3
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

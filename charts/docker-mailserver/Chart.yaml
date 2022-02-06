@@ -1,0 +1,10 @@
+apiVersion: v2
+name: docker-mailserver
+description: A Helm chart to deploy docker-mailserver
+type: application
+version: 0.0.1
+appVersion: "8.0.1"
+maintainers:
+- name: Loc Mai
+  email: locmai0201@gmail.com
+  url: maibaloc.com
