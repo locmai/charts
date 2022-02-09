@@ -4,7 +4,6 @@ metadata:
   name: terraform-source
   namespace: {{ .Release.Namespace }}
 data:
-  main.tf: |
 {{ (.Files.Glob "files/*").AsConfig | indent 2 }}
 
     locals {
