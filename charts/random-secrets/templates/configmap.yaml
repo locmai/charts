@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: terraform-source
+  namespace: {{ .Release.Namespace }}
+data:
+  main.tf: |
+{{ (.Files.Glob "files/*").AsConfig | indent 2 }}
+
+    locals {
+      random_passwords = {{ .Values.random_passwords | toJson  }}
+    }
+
+    resource "random_password" "passwords" {
+      for_each = toset(local.random_passwords)
+      length   = 64
+      special  = false
+    }

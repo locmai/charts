@@ -1,0 +1,7 @@
+terraform:
+  image: hashicorp/terraform
+  tag: 1.1.4
+
+random_passwords:
+  - "gitea-admin-password"
+  - "gitea-renovate-token"
