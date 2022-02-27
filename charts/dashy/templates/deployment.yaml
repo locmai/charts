@@ -33,6 +33,10 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+          - mountPath: /app/public/conf.yml
+            name: dashy-config
+            subPath: conf.yml
           ports:
             - name: http
               containerPort: 80
@@ -47,6 +51,13 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: dashy-config
+          configMap:
+            name: {{ include "dashy.fullname" . }}
+            items:
+            - key: conf.yml
+              path: conf.yml
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
