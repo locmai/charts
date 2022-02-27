@@ -44,6 +44,22 @@ entries:
   dashy:
   - apiVersion: v2
     appVersion: 2.0.3
+    created: "2022-02-27T18:12:17.921004644Z"
+    description: A Helm chart for lissy93/dashy
+    digest: 95bbb7f8e638e694c9e3fc41fe0bdfaf7c24817197301dccb7adb5b8389b7ff9
+    icon: https://camo.githubusercontent.com/6c0964f4604a6807c263c83fff293258a908bdff7587910976d11c4e67a589bb/68747470733a2f2f692e6962622e636f2f796862743643592f64617368792e706e67
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: dashy
+    sources:
+    - https://github.com/Lissy93/dashy
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/dashy-0.0.2/dashy-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 2.0.3
     created: "2022-02-27T04:14:49.333825116Z"
     description: A Helm chart for lissy93/dashy
     digest: 1bc89ca4e0f698c3256e16614d0d8a84575f06b0270c7ea6a9fa35c89212dbfc
@@ -1010,4 +1026,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-27T04:14:49.334044918Z"
+generated: "2022-02-27T18:12:17.921135755Z"
