@@ -1,0 +1,84 @@
+{{ if .Values.core.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "yuta.fullname" . }}-core
+  labels:
+    {{- include "yuta.labels" . | nindent 4 }}
+    component: core
+spec:
+  replicas: {{ .Values.core.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "yuta.selectorLabels" . | nindent 6 }}
+      component: core
+  template:
+    metadata:
+      {{- with .Values.core.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "yuta.selectorLabels" . | nindent 8 }}
+        component: core
+    spec:
+      {{- with .Values.core.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "yuta.serviceAccountName" . }}-core
+      securityContext:
+        {{- toYaml .Values.core.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          command: ["/core"]
+          args:
+          - '--config'
+          - '/config.yaml'
+          securityContext:
+            {{- toYaml .Values.core.securityContext | nindent 12 }}
+          image: "{{ .Values.core.image.repository }}:{{ .Values.core.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.core.image.pullPolicy }}
+          volumeMounts:
+          - name: config-yaml
+            mountPath: "/config.yaml"
+            subPath: config.yaml
+            readOnly: true
+          ports:
+            - name: http
+              containerPort: {{ .Values.core.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+          resources:
+            {{- toYaml .Values.core.resources | nindent 12 }}
+      {{- if .Values.core.configuration.existingSecret }}
+      volumes:
+      - name: config-yaml
+        secret:
+          secretName: {{ .Values.core.configuration.existingSecret }}
+      {{- else }}
+      volumes:
+      - name: config-yaml
+        configMap:
+          name: {{ include "yuta.fullname" . }}-core
+      {{- end}}
+      {{- with .Values.core.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.core.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.core.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
