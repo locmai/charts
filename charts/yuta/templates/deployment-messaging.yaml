@@ -1,0 +1,99 @@
+{{ if .Values.messaging.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "yuta.fullname" . }}-messaging
+  labels:
+    {{- include "yuta.labels" . | nindent 4 }}
+    component: messaging
+spec:
+  replicas: {{ .Values.messaging.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "yuta.selectorLabels" . | nindent 6 }}
+      component: messaging
+  template:
+    metadata:
+      {{- with .Values.messaging.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "yuta.selectorLabels" . | nindent 8 }}
+        component: messaging
+    spec:
+      {{- with .Values.messaging.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "yuta.serviceAccountName" . }}-messaging
+      securityContext:
+        {{- toYaml .Values.messaging.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          command: ["/messaging"]
+          args:
+          - '--config'
+          - '/config.yaml'
+          securityContext:
+            {{- toYaml .Values.messaging.securityContext | nindent 12 }}
+          image: "{{ .Values.messaging.image.repository }}:{{ .Values.messaging.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.messaging.image.pullPolicy }}
+          {{ if .Values.temporary.googleauth }}
+          env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: "/yuta-service-account.json"
+          {{- end }}
+          volumeMounts:
+          - name: config-yaml
+            mountPath: "/config.yaml"
+            subPath: config.yaml
+            readOnly: true
+          {{ if .Values.temporary.googleauth }}
+          - name: yuta-service-account-json
+            mountPath: "/yuta-service-account.json"
+            subPath: yuta-service-account.json
+            readOnly: true
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.messaging.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+          resources:
+            {{- toYaml .Values.messaging.resources | nindent 12 }}
+      volumes:
+      {{- if .Values.messaging.configuration.existingSecret }}
+      - name: config-yaml
+        secret:
+          secretName: {{ .Values.messaging.configuration.existingSecret }}
+      {{- else }}
+      - name: config-yaml
+        configMap:
+          name: {{ include "yuta.fullname" . }}-messaging
+      {{- end}}
+      {{ if .Values.temporary.googleauth }}
+      - name: yuta-service-account-json
+        secret:
+          secretName: yuta-service-account-json
+      {{- end }}
+      {{- with .Values.messaging.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.messaging.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.messaging.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
