@@ -61,7 +61,7 @@ core:
       auth: "in-cluster"
 
 messaging:
-  enabled: false
+  enabled: true
   replicaCount: 1
 
   image:
@@ -122,6 +122,9 @@ messaging:
       - projectid: "yuta-seig"
         languagecode: "en-US"
         type: "diaglogflow"
+
+temporary:
+  googleauth: true
 
 nats:
   enabled: true
