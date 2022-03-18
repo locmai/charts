@@ -1026,4 +1026,20 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/utils-0.1.0/utils-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-27T18:12:17.921135755Z"
+  yuta:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-03-18T18:25:19.87615347Z"
+    dependencies:
+    - condition: nats.enabled
+      name: nats
+      repository: https://nats-io.github.io/k8s/helm/charts
+      version: 0.14.2
+    description: A Helm chart for Yuta
+    digest: 37e6e9176335b1aabe1419fa4345df84f0ca9fd4a2131f1c59c433f9b14d0392
+    name: yuta
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-03-18T18:25:19.876332572Z"
