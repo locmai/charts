@@ -26,7 +26,7 @@ maintainers:
     email: pavel.nikolov@fairfaxmedia.com.au
 dependencies:
   - name: cassandra
-    version: 0.15.3
+    version: 0.15.4
     repository: https://charts.helm.sh/incubator
     condition: provisionDataStore.cassandra
   - name: elasticsearch
@@ -39,4 +39,4 @@ dependencies:
     condition: provisionDataStore.kafka
   - name: common
     repository: https://charts.bitnami.com/bitnami
-    version: 1.8.0
+    version: 1.14.0

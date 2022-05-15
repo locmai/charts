@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: "nginxinc/nginx-unprivileged"
-  tag: "1.19.5"
+  tag: "1.21.6"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
