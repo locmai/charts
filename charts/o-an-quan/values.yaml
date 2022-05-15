@@ -12,7 +12,7 @@ backend:
     repository: locmai/o-an-quan-be
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "0.0.1"
+    tag: "0.0.2"
 
   baseurl: "localhost"
   socketurl: "localhost"
@@ -52,7 +52,7 @@ frontend:
     repository: locmai/o-an-quan-fe
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "0.0.1"
+    tag: "0.0.11"
 
   baseurl: "localhost"
   socketurl: "localhost"
