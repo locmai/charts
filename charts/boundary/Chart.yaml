@@ -1,0 +1,22 @@
+apiVersion: v1
+name: boundary
+version: 0.0.1
+description: Hashicorp Boundary Helm Chart
+type: application
+keywords:
+  - boundary
+sources:
+  - https://github.com/locmai/charts
+appVersion: 0.8.1
+maintainers:
+  - name: Loc Mai
+    email: locmai0201@gmail.com
+dependencies:
+- name: redis
+  version: 16.12.2
+  repository: https://charts.bitnami.com/bitnami
+  condition: redis.enabled
+- name: postgresql
+  version: 11.6.7
+  repository: https://charts.bitnami.com/bitnami
+  condition: postgresql.enabled

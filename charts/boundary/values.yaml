@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: hashicorp/boundary
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+controller:
+  description: "Boundary controller for Kubernetes"
+
+worker:
+  description: "Boundary worker for Kubernetes"
+
+redis:
+  enabled: false
+
+postgresql:
+  enabled: true
+  primary:
+    persistence:
+      enabled: false
+      size: 2Gi
+  auth:
+    enablePostgresUser: true
+    postgresPassword: "postgres"
+    database: "boundary"
