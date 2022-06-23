@@ -130,7 +130,7 @@ web:
   tolerations: []
   image:
     repository: "nginxinc/nginx-unprivileged"
-    tag: "1.22.0"
+    tag: "1.23.0"
     pullPolicy: IfNotPresent
   port: 8080
   nginxConfig:
