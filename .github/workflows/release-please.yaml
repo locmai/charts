@@ -13,5 +13,5 @@ jobs:
         with:
           release-type: helm
           bump-minor-pre-major: true
-          path: charts/dendrite
+          path: charts/dendrite/
           token: ${{ secrets.CR_TOKEN }}
