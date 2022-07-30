@@ -2,11 +2,16 @@
 
 # Use a polylith setup, which creates a deployment for every component.
 # If false, a monolithic deployment will be created, with a single deployment.
-polylith: true
-# Docker image to use
+polylith: false
+
+## @param image Docker image to use
 image:
   name: "matrixdotorg/dendrite-polylith:latest"
   pullPolicy: Always
+
+## @param extraArgs Override default container args (useful when using custom images)
+##
+extraArgs: []
 
 configuration:
   # config version
@@ -319,18 +324,4 @@ postgresql:
     annotations: {}
 
 ingress:
-  enabled: true
-  
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    external-dns.alpha.kubernetes.io/target: "humble-tunnel.maibaloc.com"
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-  hosts:
-    - host: &host dendrite.maibaloc.com
-      paths:
-        - path: /
-          pathType: Prefix
-  tls:
-    - secretName: dendrite-tls-certificate
-      hosts:
-        - *host
+  enabled: false

@@ -45,6 +45,9 @@ spec:
         args:
           - '--config'
           - '/etc/dendrite/dendrite.yaml'
+          {{- if .Values.extraArgs }}
+          {{- include "common.tplvalues.render" (dict "value" .Values.extraArgs "context" $) | nindent 10 }}
+          {{- end }}
         resources:
         {{- toYaml $.Values.resources | nindent 10 }}
         volumeMounts:
