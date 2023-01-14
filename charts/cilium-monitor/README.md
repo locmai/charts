@@ -6,9 +6,9 @@
 
 | Name                        | Description                  | Value   |
 | --------------------------- | ---------------------------- | ------- |
-| `enablePodMonitor.agent`    | for cillium-agent metrics    | `true`  |
-| `enablePodMonitor.envoy`    | for cillium-envoy metrics    | `false` |
-| `enablePodMonitor.operator` | for cillium-operator metrics | `false` |
+| `enablePodMonitor.agent`    | for cilium-agent metrics    | `true`  |
+| `enablePodMonitor.envoy`    | for cilium-envoy metrics    | `false` |
+| `enablePodMonitor.operator` | for cilium-operator metrics | `false` |
 | `enablePodMonitor.hubble`   | for hubble metrics           | `false` |
 
 

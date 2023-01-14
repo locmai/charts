@@ -2,9 +2,9 @@
 
 ## Excalidraw image
 ## ref: https://hub.docker.com/r/excalidraw/excalidraw/tags
-## @param enablePodMonitor.agent for cillium-agent metrics
-## @param enablePodMonitor.envoy for cillium-envoy metrics
-## @param enablePodMonitor.operator for cillium-operator metrics
+## @param enablePodMonitor.agent for cilium-agent metrics
+## @param enablePodMonitor.envoy for cilium-envoy metrics
+## @param enablePodMonitor.operator for cilium-operator metrics
 ## @param enablePodMonitor.hubble for hubble metrics
 ## 
 enablePodMonitor:
