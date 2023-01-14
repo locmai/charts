@@ -215,6 +215,22 @@ entries:
   excalidraw:
   - apiVersion: v2
     appVersion: 0.14.0
+    created: "2023-01-14T09:15:45.204898241Z"
+    description: A Helm chart for Excalidraw
+    digest: 3fb3465111a4e1ecb29da5ad72042fd75353c7d1985444321f2b7595e61aefd4
+    keywords:
+    - excalidraw
+    - diagram
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: excalidraw
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/excalidraw-0.0.2/excalidraw-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.14.0
     created: "2023-01-14T08:30:22.778974098Z"
     description: A Helm chart for Excalidraw
     digest: 32ccf3d1f92bca6a6bd6a00046dc9089d782f894c922a02055b276f7188a2934
@@ -1242,4 +1258,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-14T08:30:22.779060902Z"
+generated: "2023-01-14T09:15:45.205333543Z"
