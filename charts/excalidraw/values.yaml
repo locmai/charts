@@ -11,7 +11,7 @@ replicaCount: 1
 ## @param image.tag image tag (immutable tags are recommended)
 ##
 image:
-  repository: excalidraw
+  repository: excalidraw/excalidraw
   pullPolicy: IfNotPresent
   tag: "sha-4bfc5bb"
 
