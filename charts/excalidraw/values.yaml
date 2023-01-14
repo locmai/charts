@@ -1,0 +1,101 @@
+## @section Common parameters
+
+## @param replicaCount Override replicaCount
+##
+replicaCount: 1
+
+## Excalidraw image
+## ref: https://hub.docker.com/r/excalidraw/excalidraw/tags
+## @param image.repository image repository
+## @param image.pullPolicy pull policy
+## @param image.tag image tag (immutable tags are recommended)
+##
+image:
+  repository: excalidraw
+  pullPolicy: IfNotPresent
+  tag: "sha-4bfc5bb"
+
+## @param imagePullSecrets image pull secrets
+imagePullSecrets: []
+
+## @param nameOverride name to override with
+nameOverride: ""
+
+## @param fullnameOverride fullname to override with
+fullnameOverride: ""
+
+## @skip serviceAccount
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+## @skip podAnnotations
+podAnnotations: {}
+
+## @skip podSecurityContext
+podSecurityContext: {}
+  # fsGroup: 2000
+
+## @skip securityContext
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+## @param service.type service type (either ClusterIP, LoadBalancer, or NodePort)
+## @param service.port pull policy
+##
+service:
+  type: ClusterIP
+  port: 80
+
+## @skip ingress
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+## @skip resources
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+## @skip autoscaling
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+## @skip nodeSelector
+nodeSelector: {}
+
+## @skip tolerations
+tolerations: []
+
+## @skip affinity
+affinity: {}
