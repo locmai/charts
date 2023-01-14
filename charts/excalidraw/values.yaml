@@ -13,7 +13,7 @@ replicaCount: 1
 image:
   repository: excalidraw/excalidraw
   pullPolicy: IfNotPresent
-  tag: "sha-4bfc5bb"
+  tag: "latest"
 
 ## @param imagePullSecrets image pull secrets
 imagePullSecrets: []
