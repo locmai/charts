@@ -1,0 +1,14 @@
+{{- if .Values.enablePodMonitor.agent -}}
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: cillium-agent-metrics
+  labels:
+    name: cilium-operator
+spec:
+  selector:
+    matchLabels:
+      name: cilium-operator
+  podMetricsEndpoints:
+  - port: prometheus
+{{- end }}
