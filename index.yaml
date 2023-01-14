@@ -43,6 +43,22 @@ entries:
     version: 0.1.0
   dashy:
   - apiVersion: v2
+    appVersion: 2.1.1
+    created: "2023-01-14T07:54:21.103903073Z"
+    description: A Helm chart for lissy93/dashy
+    digest: c2203e5fa4536cf5973eeec3acab7d3ed0567420155d18f74bc03f209370f8c4
+    icon: https://camo.githubusercontent.com/6c0964f4604a6807c263c83fff293258a908bdff7587910976d11c4e67a589bb/68747470733a2f2f692e6962622e636f2f796862743643592f64617368792e706e67
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: dashy
+    sources:
+    - https://github.com/Lissy93/dashy
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/dashy-0.0.4/dashy-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     appVersion: 2.0.3
     created: "2023-01-14T07:39:59.939783451Z"
     description: A Helm chart for lissy93/dashy
@@ -148,6 +164,16 @@ entries:
   elementweb:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-01-14T07:54:21.2215917Z"
+    description: A Helm chart for app.element.io
+    digest: f1d54a536145912c4566f15bec0f62e20981abd260183d2a457a35952372f09d
+    name: elementweb
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/elementweb-0.0.6/elementweb-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-01-14T07:40:00.136126389Z"
     description: A Helm chart for app.element.io
     digest: 4ebeab999854f2f34716504e540106119049b048b244fe518ba99f0899b6eb28
@@ -187,6 +213,26 @@ entries:
     - https://github.com/locmai/charts/releases/download/elementweb-0.0.1/elementweb-0.0.1.tgz
     version: 0.0.1
   filebrowser:
+  - apiVersion: v2
+    appVersion: v2.15.0
+    created: "2023-01-14T07:54:21.339924627Z"
+    description: A Helm chart for File Browser
+    digest: 47e61f5ae81089494f4a20801ec3d443118e3177c3d2787dfb0a6c0fa7041bfd
+    icon: https://gblobscdn.gitbook.com/spaces%2F-M8KDxOujDoPpJyJJ5_i%2Favatar-1590579241040.png
+    keywords:
+    - filebrowser
+    - filesharing
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: filebrowser
+    sources:
+    - https://filebrowser.org
+    - https://github.com/locmai/charts
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/filebrowser-0.0.4/filebrowser-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     appVersion: v2.15.0
     created: "2023-01-14T07:40:00.327681471Z"
@@ -1053,6 +1099,29 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.10.0
+    created: "2023-01-14T07:54:21.462962938Z"
+    description: A Library Helm Chart for utilities
+    digest: 3493f4f4f00887f5bda09b5a9455ab6ef5876f29fde9f5304376400a7addbf4b
+    keywords:
+    - common
+    - helper
+    - template
+    - function
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: utils
+    sources:
+    - https://github.com/locmai/charts
+    - https://humble.maibaloc.com
+    type: library
+    urls:
+    - https://github.com/locmai/charts/releases/download/utils-0.1.2/utils-0.1.2.tgz
+    version: 0.1.2
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.10.0
     created: "2023-01-14T07:40:00.527708453Z"
     description: A Library Helm Chart for utilities
     digest: b1fd3eb104455acd1fd2245a201f5ba0c85e14a13accc88c6ebc60fb46ea7eeb
@@ -1098,6 +1167,21 @@ entries:
   yuta:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-01-14T07:54:21.58101264Z"
+    dependencies:
+    - condition: nats.enabled
+      name: nats
+      repository: https://nats-io.github.io/k8s/helm/charts
+      version: 0.17.1
+    description: A Helm chart for Yuta
+    digest: 54dbc4671a3c3f8198656cde5ee4d1cec65acb25a1d0904cae0d4ffcecf3f6fe
+    name: yuta
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/yuta-0.0.4/yuta-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-01-14T07:40:00.745040842Z"
     dependencies:
     - condition: nats.enabled
@@ -1141,4 +1225,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-14T07:40:00.745274445Z"
+generated: "2023-01-14T07:54:21.581143243Z"
