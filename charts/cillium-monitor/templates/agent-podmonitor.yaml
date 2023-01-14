@@ -9,12 +9,12 @@ spec:
     matchLabels:
       k8s-app: cilium
   podMetricsEndpoints:
-  {{- if .Values.enablePodMonitor.agent -}}
+  {{ if .Values.enablePodMonitor.agent -}}
   - port: prometheus
   {{- end }}
-  {{- if .Values.enablePodMonitor.envoy -}}
+  {{ if .Values.enablePodMonitor.envoy -}}
   - port: envoy-metrics
   {{- end }}
-  {{- if .Values.enablePodMonitor.hubble -}}
+  {{ if .Values.enablePodMonitor.hubble -}}
   - port: hubble-metrics
   {{- end }}
