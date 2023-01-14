@@ -2,7 +2,7 @@ apiVersion: v2
 name: excalidraw
 description: A Helm chart for Excalidraw
 type: application
-version: 0.0.1
+version: 0.0.2
 appVersion: "0.14.0"
 keywords:
   - excalidraw
