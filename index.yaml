@@ -3,6 +3,22 @@ entries:
   cillium-monitor:
   - apiVersion: v2
     appVersion: v1.12
+    created: "2023-01-14T12:39:38.469845721Z"
+    description: A Helm chart for deploying PodMonitor resources for Cillium's components
+    digest: 90339c9ea3ba899551af9218ca14895082d8bb7cdfd6e89d7b601c8a00cfda6c
+    keywords:
+    - cillium
+    - hubble
+    maintainers:
+    - email: locmai0201@gmail.com
+      name: Loc Mai
+    name: cillium-monitor
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/cillium-monitor-0.0.2/cillium-monitor-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: v1.12
     created: "2023-01-14T12:28:09.072370876Z"
     description: A Helm chart for deploying PodMonitor resources for Cillium's components
     digest: c58f58310ff257d2d6374c9d0fd4407c32b3c85286763f760c2b255d8ac04855
@@ -1291,4 +1307,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-14T12:28:09.072762382Z"
+generated: "2023-01-14T12:39:38.469962221Z"
