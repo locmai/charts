@@ -1,8 +1,8 @@
-{{- if .Values.enablePodMonitor.agent -}}
+{{- if .Values.enablePodMonitor.operator -}}
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
-  name: cillium-agent-metrics
+  name: cillium-operator-metrics
   labels:
     name: cilium-operator
 spec:
