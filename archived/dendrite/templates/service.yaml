@@ -1,7 +1,0 @@
-{{ template "validate.config" . }}
-
-{{ if .Values.polylith }}
-{{ template "service.polylith" . }}
-{{ else }}
-{{ template "service.monolith" . }}
-{{ end }}
