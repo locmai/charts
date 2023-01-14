@@ -4,7 +4,7 @@
 ##
 replicaCount: 1
 
-## Excalidraw image
+## Excalidraw
 ## ref: https://hub.docker.com/r/excalidraw/excalidraw/tags
 ## @param image.repository image repository
 ## @param image.pullPolicy pull policy
@@ -99,3 +99,26 @@ tolerations: []
 
 ## @skip affinity
 affinity: {}
+
+## Excalidraw Room
+## ref: https://hub.docker.com/r/excalidraw/excalidraw-room/tags
+## @param room.enabled whether to enable excalidraw-room and minio
+room:
+  enabled: false
+  image:
+    repository: excalidraw/excalidraw-room
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+## Minio
+## ref: https://github.com/minio/minio/blob/master/helm/minio/values.yaml
+## @skip minio
+minio:
+  mode: standalone
+  rootUser: "excalidraw"
+  rootPassword: "excalidraw" # 2023 security in a nutshell
+
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 5Gi

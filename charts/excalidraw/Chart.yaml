@@ -10,3 +10,9 @@ keywords:
 maintainers:
   - email: locmai0201@gmail.com
     name: Loc Mai
+
+dependencies:
+- name: minio
+  version: 5.0.4
+  repository: https://charts.min.io/
+  condition: room.enabled
