@@ -5,7 +5,7 @@ maintainers:
   - email: locmai0201@gmail.com
     name: Loc Mai
 type: application
-version: 0.0.2
+version: 0.0.3
 appVersion: "2.0.3"
 sources:
   - https://github.com/Lissy93/dashy
