@@ -1,0 +1,12 @@
+apiVersion: v2
+name: cillium-monitor
+description: A Helm chart for deploying PodMonitor resources for Cillium's components
+type: application
+version: 0.0.1
+appVersion: "v1.12"
+keywords:
+  - cillium
+  - hubble
+maintainers:
+  - email: locmai0201@gmail.com
+    name: Loc Mai
