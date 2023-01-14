@@ -5,7 +5,7 @@ The release numbering uses [semantic versioning](http://semver.org).
 
 ## 0.0.2
 
-- fixes excalidraw image
+- Fixes excalidraw image
 
 ## 0.0.1
 
