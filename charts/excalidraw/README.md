@@ -9,7 +9,7 @@
 | `replicaCount`     | Override replicaCount                                      | `1`                     |
 | `image.repository` | image repository                                           | `excalidraw/excalidraw` |
 | `image.pullPolicy` | pull policy                                                | `IfNotPresent`          |
-| `image.tag`        | image tag (immutable tags are recommended)                 | `sha-4bfc5bb`           |
+| `image.tag`        | image tag (immutable tags are recommended)                 | `latest`                |
 | `imagePullSecrets` | image pull secrets                                         | `[]`                    |
 | `nameOverride`     | name to override with                                      | `""`                    |
 | `fullnameOverride` | fullname to override with                                  | `""`                    |
