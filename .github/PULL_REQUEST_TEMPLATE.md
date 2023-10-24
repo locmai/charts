@@ -8,4 +8,5 @@
 
 ### Checklist
 <!-- [Place an '[x]' (no spaces) in all applicable fields. Please remove unrelated fields.] -->
-- [ ] README.md was updated with readme-generator
+- [ ] CHANGELOG.md was updated
+- [ ] README.md was updated 
