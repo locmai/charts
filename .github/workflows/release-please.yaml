@@ -28,6 +28,6 @@ jobs:
     steps:
       - run: echo ${{ matrix.dir }}
       - uses: google-github-actions/release-please-action@v3
+        working-directory: ${{ matrix.dir }}
         with:
           release-type: helm
-          path: ${{ matrix.dir }} 
