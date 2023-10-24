@@ -262,6 +262,17 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/elementweb-0.0.1/elementweb-0.0.1.tgz
     version: 0.0.1
+  example:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-10-24T07:04:50.057963539Z"
+    description: A Helm chart for Kubernetes
+    digest: 7198c4f14177a2eb7907b37d5e4564f9d3dd060da5f5b548a97b7e6f4c00b218
+    name: example
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/example-0.1.0/example-0.1.0.tgz
+    version: 0.1.0
   excalidraw:
   - apiVersion: v2
     appVersion: 0.14.0
@@ -1324,4 +1335,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-14T13:46:04.536548893Z"
+generated: "2023-10-24T07:04:50.058069839Z"
