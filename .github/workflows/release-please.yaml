@@ -23,7 +23,7 @@ jobs:
     needs: collect-dirs
     strategy:
       matrix:
-        dir: ${{ fromJson(needs.collect_dirs.outputs.dirs) }}
+        dir: ${{ fromJson(needs.collect-dirs.outputs.dirs) }}
     steps:
       - run: echo ${{ matrix.dir }}
       # - uses: google-github-actions/release-please-action@v3
