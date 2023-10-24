@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  collect-dirs:
+    runs-on: ubuntu-latest
+    outputs:
+      dirs: ${{ steps.dirs.outputs.dirs }}
+    steps:
+      - uses: actions/checkout@v2
+      - id: dirs
+        run: echo "dirs=$(ls -d tests/*/ | jq --raw-input --slurp --compact-output 'split("\n")[:-1]')" >> ${GITHUB_OUTPUT}
+  release-please:
+    runs-on: ubuntu-latest
+    needs: collect-dirs
+    strategy:
+      matrix:
+        dir: ${{ fromJson(needs.collect_dirs.outputs.dirs) }}
+    steps:
+      - run: echo ${{ matrix.dir }}
+      # - uses: google-github-actions/release-please-action@v3
+      #   with:
+      #     release-type: helm
+      #     path: ${{ matrix.dir }} 
