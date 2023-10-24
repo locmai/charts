@@ -27,7 +27,7 @@ jobs:
     name: ${{ matrix.dir }}
     steps:
       - run: echo ${{ matrix.dir }}
-      # - uses: google-github-actions/release-please-action@v3
-      #   with:
-      #     release-type: helm
-      #     path: ${{ matrix.dir }} 
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: helm
+          path: ${{ matrix.dir }} 
