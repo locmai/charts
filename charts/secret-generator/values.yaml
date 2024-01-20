@@ -4,5 +4,5 @@ config: []
   #     - key: client_secret
   #       length: 32
 
-secret-external:
+external-secrets:
   enabled: false
