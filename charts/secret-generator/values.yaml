@@ -1,0 +1,8 @@
+config:
+  - name: dex.grafana
+    data:
+      - key: client_secret
+        length: 32
+
+secret-external:
+  enabled: false
