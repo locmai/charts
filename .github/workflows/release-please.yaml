@@ -15,7 +15,7 @@ jobs:
     outputs:
       dirs: ${{ steps.dirs.outputs.dirs }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: dirs
         run: echo "dirs=$(ls -d charts/*/ | jq --raw-input --slurp --compact-output 'split("\n")[:-1]')" >> ${GITHUB_OUTPUT}
   release-please:
