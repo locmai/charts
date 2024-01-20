@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   {{- with .Values.config }}
-  configmap.yaml: >
+  config.yaml: >
   {{- toYaml . | nindent 4 }}  
   {{- end }}
 {{ (.Files.Glob "files/secret-generator/*").AsConfig | indent 2 }}
