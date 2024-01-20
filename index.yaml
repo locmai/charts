@@ -1215,6 +1215,22 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/saleor-storefront-0.1.1/saleor-storefront-0.1.1.tgz
     version: 0.1.1
+  secret-generator:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-01-20T07:24:47.447061948Z"
+    dependencies:
+    - condition: external-secrets.enabled
+      name: external-secrets
+      repository: https://charts.external-secrets.io
+      version: 0.9.11
+    description: A Helm chart for generating secrets
+    digest: 8d6a0860de09dbc14250d41664a90b8c14978da623db835c1a786e7fb739e50f
+    name: secret-generator
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/secret-generator-0.1.0/secret-generator-0.1.0.tgz
+    version: 0.1.0
   utils:
   - annotations:
       category: Infrastructure
@@ -1346,4 +1362,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
     version: 0.0.1
-generated: "2023-10-24T07:18:58.219009539Z"
+generated: "2024-01-20T07:24:47.447292835Z"
