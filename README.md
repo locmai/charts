@@ -7,7 +7,7 @@ Support customized and opinionated applications and infrastructure charts until 
 ```
 helm repo add locmai https://locmai.github.io/charts/
 helm search repo locmai
-helm install excalidraw locmai/excalidraw
+helm install secret-generator locmai/secret-generator
 ```
 
 ## Generate README.md
