@@ -1276,6 +1276,46 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/secret-generator-0.1.0/secret-generator-0.1.0.tgz
     version: 0.1.0
+  temporal:
+  - apiVersion: v2
+    appVersion: 1.22.4
+    created: "2024-01-23T08:40:48.583506689Z"
+    dependencies:
+    - condition: cassandra.enabled
+      name: cassandra
+      repository: https://charts.helm.sh/incubator
+      version: 0.14.3
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 15.1.3
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.17.3
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 5.0.10
+    description: Temporal is a distributed, scalable, durable, and highly available
+      orchestration engine to execute asynchronous long-running business logic in
+      a scalable and resilient way.
+    digest: 71e9d5a266ebad6fcef788272db626dcb9493c43ce029340ccc8bac8a0d82507
+    home: https://temporal.io/
+    keywords:
+    - temporal
+    - workflow
+    - orchestration
+    maintainers:
+    - name: Temporal Technologies Inc.
+      url: https://temporal.io/
+    name: temporal
+    sources:
+    - https://github.com/temporalio/temporal
+    type: application
+    urls:
+    - https://github.com/locmai/charts/releases/download/temporal-0.32.0/temporal-0.32.0.tgz
+    version: 0.32.0
   utils:
   - annotations:
       category: Infrastructure
@@ -1407,4 +1447,4 @@ entries:
     urls:
     - https://github.com/locmai/charts/releases/download/yuta-0.0.1/yuta-0.0.1.tgz
     version: 0.0.1
-generated: "2024-01-20T08:32:18.93911236Z"
+generated: "2024-01-23T08:40:48.583629698Z"
