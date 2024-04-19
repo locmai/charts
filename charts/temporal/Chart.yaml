@@ -17,7 +17,7 @@ maintainers:
   - name: Temporal Technologies Inc.
     url: https://temporal.io/
   - name: Loc Mai
-    url: https://maibaloc.com
+    url: https://locmai.dev
 
 sources:
   - https://github.com/temporalio/temporal
