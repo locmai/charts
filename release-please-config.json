@@ -1,4 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
-  "release-type": "helm"
+  "release-type": "helm",
+  "include-component-in-tag": false
 }

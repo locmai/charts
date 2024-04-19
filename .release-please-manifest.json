@@ -1,3 +1,6 @@
 {
-
+  "packages": {
+    "charts/secret-generators": {},
+    "charts/temporal": {}
+  }
 }
