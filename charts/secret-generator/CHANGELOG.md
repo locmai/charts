@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/locmai/charts/compare/secret-generator-v0.1.6...secret-generator-v0.1.7) (2024-04-19)
+
+
+### Bug Fixes
+
+* **secret-generator:** update URL ([8d7ecd5](https://github.com/locmai/charts/commit/8d7ecd502dd697207e4ffc70d50f17e5c0ca68cb))
+
 ## [0.1.6](https://github.com/locmai/charts/compare/secret-generator-v0.1.5...secret-generator-v0.1.6) (2024-04-19)
 
 
