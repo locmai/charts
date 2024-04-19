@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.10](https://github.com/locmai/charts/compare/temporal-v0.32.9...temporal-v0.32.10) (2024-04-19)
+
+
+### Bug Fixes
+
+* **secret-generator:** update URL ([693a068](https://github.com/locmai/charts/commit/693a0686d206e78ce17246738a53cafddfc8752b))
+
 ## [0.32.9](https://github.com/locmai/charts/compare/temporal-v0.32.8...temporal-v0.32.9) (2024-04-19)
 
 

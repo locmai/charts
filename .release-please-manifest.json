@@ -1,5 +1,5 @@
 {
   "charts/secret-generators": "0.1.3",
-  "charts/temporal": "0.32.9",
-  "charts/secret-generator": "0.1.5"
+  "charts/temporal": "0.32.10",
+  "charts/secret-generator": "0.1.6"
 }
