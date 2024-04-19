@@ -10,4 +10,4 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CR_TOKEN }}
