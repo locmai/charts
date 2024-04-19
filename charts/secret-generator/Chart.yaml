@@ -1,6 +1,6 @@
 apiVersion: v2
 name: secret-generator
-description: A Helm chart for generating secrets for homelab
+description: A Helm chart for generating secrets
 
 maintainers:
   - name: Loc Mai
