@@ -3,7 +3,7 @@ name: secret-generator
 description: A Helm chart for generating secrets
 
 maintainers:
-  - name: Loc Mai
+  - name: Loc B.Mai
     url: https://maibaloc.com
 # A chart can be either an 'application' or a 'library' chart.
 #
