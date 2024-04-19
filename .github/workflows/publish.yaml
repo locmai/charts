@@ -26,5 +26,6 @@ jobs:
       - name: Publish
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io/locmai --username locmai --password-stdin
+          helm dependeny build ./charts/${{ steps.get_chart_name.outputs.chart_name }}
           helm package ./charts/${{ steps.get_chart_name.outputs.chart_name }}
           helm push ${{ env.RELEASE_TAG }}.tgz ocig://ghcr.io/locmai
