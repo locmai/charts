@@ -1,11 +1,12 @@
 on:
   release:
-    types:
-      - published
-      - edited # for testing only
+    types: [published, edited]
+
 env:
   RELEASE_TAG: ${{ github.ref_name }}
-name: Publish Helm chart
+
+name: publish-helm-chart 
+
 jobs:
   publish:
     name: Publish
