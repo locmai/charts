@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.3](https://github.com/locmai/charts/compare/temporal-v0.32.2...temporal-v0.32.3) (2024-04-19)
+
+
+### Bug Fixes
+
+* **temporal:** update URL ([ef27976](https://github.com/locmai/charts/commit/ef27976e987644862f4899d557564bf89eec1d5e))
+
 ## [0.32.2](https://github.com/locmai/charts/compare/temporal-v0.32.1...temporal-v0.32.2) (2024-04-19)
 
 
