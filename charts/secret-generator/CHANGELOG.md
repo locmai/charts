@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/locmai/charts/compare/secret-generator-v0.1.4...secret-generator-v0.1.5) (2024-04-19)
+
+
+### Bug Fixes
+
+* **secret-generator:** add locmai as maintainer ([3e2fcc8](https://github.com/locmai/charts/commit/3e2fcc824313c0471c4b9e7e3002d85c8cde23b6))
+* **secret-generator:** go mod tidy ([9b8ea58](https://github.com/locmai/charts/commit/9b8ea589dbb5ddce938adacd181494a8d4cf91c7))
+
 ## 0.1.4 (2024-04-19)
 
 

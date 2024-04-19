@@ -2,7 +2,9 @@ apiVersion: v2
 
 name: temporal
 
-description: Temporal is a distributed, scalable, durable, and highly available orchestration engine to execute asynchronous long-running business logic in a scalable and resilient way.
+description: Temporal is a distributed, scalable, durable, and highly available
+  orchestration engine to execute asynchronous long-running business logic in a
+  scalable and resilient way.
 
 home: https://temporal.io/
 
@@ -51,7 +53,7 @@ type: application
 
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
-version: 0.32.0
+version: 0.32.1
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
