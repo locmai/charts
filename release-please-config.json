@@ -3,7 +3,7 @@
   "release-type": "helm",
   "packages": {
     "charts/secret-generator": {
-      "component": "secret-generator",
+      "component": "secret-generator"
     },
     "charts/temporal": {
       "component": "temporal"
