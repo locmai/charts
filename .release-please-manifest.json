@@ -1,6 +1,11 @@
 {
+  "release-type": "helm",
   "packages": {
-    "charts/secret-generators": {},
-    "charts/temporal": {}
+    "charts/secret-generators": {
+      "component": "secret-generators"
+    },
+    "charts/temporal": {
+      "component": "temporal"
+    }
   }
 }
