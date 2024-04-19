@@ -1,0 +1,17 @@
+on:
+  release:
+    types:
+      - published
+      - edited # for testing only
+env:
+  RELEASE_TAG: ${{ github.ref_name }}
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo ref_name
+        run: |
+          echo ${{ env.RELEASE_TAG }}
+
+
