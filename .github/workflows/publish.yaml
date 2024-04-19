@@ -1,6 +1,6 @@
 on:
   release:
-    types: [published, edited, created]
+    types: [published, edited]
 
 env:
   RELEASE_TAG: ${{ github.ref_name }}
@@ -26,6 +26,6 @@ jobs:
       - name: Publish
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io/locmai --username locmai --password-stdin
-          helm dependeny build ./charts/${{ steps.get_chart_name.outputs.chart_name }}
+          helm dependency build ./charts/${{ steps.get_chart_name.outputs.chart_name }}
           helm package ./charts/${{ steps.get_chart_name.outputs.chart_name }}
           helm push ${{ env.RELEASE_TAG }}.tgz ocig://ghcr.io/locmai
