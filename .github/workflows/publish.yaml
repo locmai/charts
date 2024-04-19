@@ -5,6 +5,7 @@ on:
       - edited # for testing only
 env:
   RELEASE_TAG: ${{ github.ref_name }}
+name: Publish Helm chart
 jobs:
   publish:
     name: Publish
