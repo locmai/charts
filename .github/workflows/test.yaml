@@ -1,5 +1,4 @@
-on:
-  dispatch:
+on: workflow_dispatch
 
 name: test
 
