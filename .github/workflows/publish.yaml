@@ -21,11 +21,14 @@ jobs:
           echo ${{ env.RELEASE_TAG }}
           version=${{ env.RELEASE_TAG }}
           chart_name=$(echo "$version" | sed 's/-v.*$//')
+          version=$(echo "$version" | sed -E 's/.*-v([0-9]+\.[0-9]+\.[0-9]+)$/\1/')
           echo "$chart_name"
+          echo "$version"
           echo "chart_name=$chart_name" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Publish
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io/locmai --username locmai --password-stdin
           helm dependency build ./charts/${{ steps.get_chart_name.outputs.chart_name }}
           helm package ./charts/${{ steps.get_chart_name.outputs.chart_name }}
-          helm push ./charts/${{ env.RELEASE_TAG }}.tgz oci://ghcr.io/locmai
+          helm push ./charts/${{ steps.get_chart_name.outputs.chart_name }}-${{ steps.get_chart_name.outputs.version }}.tgz oci://ghcr.io/locmai
