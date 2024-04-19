@@ -20,7 +20,7 @@ spec:
     targetRevision: 0.1.10
 ```
 
-For legacy Helm releases:
+For legacy Helm releases (see: [index.yaml](https://locmai.github.io/charts//index.yaml)):
 
 ```
 helm repo add locmai https://locmai.github.io/charts/
