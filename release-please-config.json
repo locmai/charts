@@ -4,6 +4,7 @@
   "packages": {
     "charts/secret-generator": {
       "component": "secret-generator"
+      "release-as": "0.1.4"
     },
     "charts/temporal": {
       "component": "temporal"
