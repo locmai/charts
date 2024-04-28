@@ -1,0 +1,117 @@
+replicas: 1
+
+image:
+  repository: glanceapp/glance
+  tag: ""
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# config: {}
+config:
+  theme:
+    background-color: 225 14 15
+    primary-color: 157 47 65
+    contrast-multiplier: 1.1
+  pages:
+    - name: Home
+      columns:
+        - size: small
+          widgets:
+            - type: calendar
+
+            - type: rss
+              limit: 10
+              collapse-after: 3
+              cache: 3h
+              feeds:
+                - url: https://ciechanow.ski/atom.xml
+                - url: https://www.joshwcomeau.com/rss.xml
+                  title: Josh Comeau
+                - url: https://samwho.dev/rss.xml
+                - url: https://awesomekling.github.io/feed.xml
+                - url: https://ishadeed.com/feed.xml
+                  title: Ahmad Shadeed
+
+            - type: twitch-channels
+              channels:
+                - theprimeagen
+                - cohhcarnage
+                - christitustech
+                - blurbs
+                - asmongold
+                - jembawls
+
+        - size: full
+          widgets:
+            - type: hacker-news
+
+            - type: videos
+              channels:
+                - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+                - UCv6J_jJa8GJqFwQNgNrMuww # ServeTheHome
+                - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
+
+            - type: reddit
+              subreddit: selfhosted
+
+        - size: small
+          widgets:
+            - type: weather
+              location: London, United Kingdom
+
+            - type: stocks
+              stocks:
+                - symbol: SPY
+                  name: S&P 500
+                - symbol: BTC-USD
+                  name: Bitcoin
+                - symbol: NVDA
+                  name: NVIDIA
+                - symbol: AAPL
+                  name: Apple
+                - symbol: MSFT
+                  name: Microsoft
+                - symbol: GOOGL
+                  name: Google
+                - symbol: AMD
+                  name: AMD
+                - symbol: RDDT
+                  name: Reddit
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+  resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  #
+
+  autoscaling:
+    enabled: false

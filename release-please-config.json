@@ -7,6 +7,9 @@
     },
     "charts/temporal": {
       "component": "temporal"
+    },
+    "charts/glance": {
+      "components": "glance"
     }
   }
 }

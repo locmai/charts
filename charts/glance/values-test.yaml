@@ -1,0 +1,100 @@
+replicas: 1
+
+image:
+  repository: glanceapp/glance
+  tag: ""
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# config: {}
+config:
+  theme:
+    light: true
+    background-color: 0 0 95
+    primary-color: 0 0 10
+    negative-color: 0 90 50
+  pages:
+    - name: Home
+      columns:
+        - size: small
+          widgets:
+            - type: calendar
+
+            - type: twitch-channels
+              channels:
+                - theprimeagen
+                - zy0xxx
+                - sweetily
+                - kenrurouni
+                - cyyuvtuber
+                - ml7support
+
+            - type: monitor
+              cache: 5m
+              title: Services
+              sites:
+              - title: Excalidraw 
+                url: https://draw.maibaloc.com/
+                icon: https://raw.githubusercontent.com/excalidraw/excalidraw/master/dev-docs/static/img/logo.svg
+              - title: kandidm
+                url: https://auth.maibaloc.com/
+                icon: https://kanidm.com/images/logo.svg
+
+        - size: full
+          widgets:
+            - type: videos
+              channels:
+                - UCUyeluBRhGPCW4rPe_UvBZQ # ThePrimeTimeagen 
+                - UCgo5pn2U8qbl_WYXU8Q6f0w # Zy0x
+                - UCYfdidRxbB8Qhf0Nx7ioOYw # Zajef77
+                - UCvqbFHwN-nwalWPjPUKpvTA # CNCF
+                - UCsBjURrPoezykLs9EqgamOA # Fireship
+                - UCZU9T1ceaOgwfLRq7OKFU4Q # Linkin Park
+                - UC5mzpqa98hIFlQ9SFxqAilw # EvB
+
+            - type: hacker-news
+
+            - type: reddit
+              subreddit: selfhosted
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    external-dns.alpha.kubernetes.io/target: "prod-humble-tunnel.maibaloc.com"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: &host glance.maibaloc.com 
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+   - secretName: glance-tls 
+     hosts:
+       - *host 
+
+  resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  #
+
+  autoscaling:
+    enabled: false
