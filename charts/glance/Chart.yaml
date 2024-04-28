@@ -1,13 +1,13 @@
 apiVersion: v2
-name: glance 
+name: glance
 version: 0.1.0
 appVersion: v0.1.0
-description: A Helm chart to deploy https://github.com/glanceapp/glance application 
+description: A Helm chart to deploy https://github.com/glanceapp/glance application
 home: https://grafana.com
 sources:
   - https://github.com/glanceapp/glance
   - https://github.com/locmai/charts
 maintainers:
-  - name: locmai 
-    email: locmai0201@gmail.com 
+  - name: locmai
+    email: locmai0201@gmail.com
 type: application
