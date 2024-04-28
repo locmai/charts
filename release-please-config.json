@@ -9,7 +9,8 @@
       "component": "temporal"
     },
     "charts/glance": {
-      "components": "glance"
+      "components": "glance",
+      "release-as": "0.1.0"
     }
   }
 }
