@@ -21,7 +21,7 @@ server:
   sidecarContainers: {}
   image:
     repository: temporalio/server
-    tag: 1.25.0
+    tag: 1.25.1
     pullPolicy: IfNotPresent
 
   # Global default settings (can be overridden per service)
@@ -318,7 +318,7 @@ web:
 
   image:
     repository: temporalio/ui
-    tag: 2.31.1
+    tag: 2.31.2
     pullPolicy: IfNotPresent
 
   service:
