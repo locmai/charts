@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.11](https://github.com/locmai/charts/compare/secret-generator-v0.1.10...secret-generator-v0.1.11) (2025-01-10)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([9607848](https://github.com/locmai/charts/commit/96078486e26aee9168901196df18c79a5bf53298))
+
 ## [0.1.10](https://github.com/locmai/charts/compare/secret-generator-v0.1.9...secret-generator-v0.1.10) (2024-04-19)
 
 
