@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.14](https://github.com/locmai/charts/compare/temporal-v0.32.13...temporal-v0.32.14) (2025-05-01)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([4e31e5a](https://github.com/locmai/charts/commit/4e31e5a34157622c3c8ba8c532333f056d7b2d5d))
+
 ## [0.32.13](https://github.com/locmai/charts/compare/temporal-v0.32.12...temporal-v0.32.13) (2025-03-24)
 
 
