@@ -2,14 +2,14 @@ module git.khuedoan.com/khuedoan/homelab/platform/secret-generator
 
 go 1.24.0
 
-toolchain go1.24.3
+toolchain go1.24.4
 
 require (
 	github.com/sethvargo/go-password v0.3.1
 	gopkg.in/yaml.v2 v2.4.0
-	k8s.io/api v0.33.1
-	k8s.io/apimachinery v0.33.1
-	k8s.io/client-go v0.33.1
+	k8s.io/api v0.33.2
+	k8s.io/apimachinery v0.33.2
+	k8s.io/client-go v0.33.2
 )
 
 require (
